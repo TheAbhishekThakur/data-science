@@ -253,8 +253,98 @@ for i in {1: 'one', 2: 'two', 3: 'three'}:
 ## Program - The current population of a town is 10000. The population increases by 10% every year. Calculate the population after 10 years.
 
 ```
+import math
 population = 10000
 for year in range(10, 0, -1):  # Loop from 10 to 1
     print(f"Population after year {year}: {int(population)}")  # Print population after each year
-    population = population -  0.10 * population # Decrease population by 10% each year
+    population = math.floor(population / 1.1)  # Increase population by 10%
+print(f"Population after 10 years: {int(population)}")  # Final population
+```
+
+## Sequence of numbers: 1/1! + 2/2! + 3/3! + ... + n/n!
+
+```
+n = int(input("Enter a number: "))
+result = 0
+fact = 1
+for i in range(1, n +1):
+    fact *= i
+    result += i / fact
+print(result)  # Print the result of the sequence
+```
+
+# Nested Loop in Python
+
+## Enique pairs of numbers from two lists
+
+```
+for i in range(1, 5):
+    for j in range(1, 5):
+        print(i, j)  # Print pairs of numbers from 1 to 4
+```
+        
+### Print Pattern - 1
+### *
+### **
+### ***
+### ****
+
+```
+for i in range(1, 5):
+    for j in range(1, i +1):
+        print("*", end="")
+    print()  # Print a new line after each row
+```
+
+### Print Pattern - 2
+### 1
+### 121
+### 12321
+### 1234321
+
+```
+for i in range(1, 5):
+    for j in range(1, i+1):
+        print(j, end="")
+    for k in range(i-1, 0, -1):
+        print(k, end="")
+    print()  # Print a new line after each row
+```
+
+## Break Loop
+
+```
+for i in range(0, 10):
+    if i == 5:
+        break  # Exit the loop when i is 6
+    print(i)  # Print numbers from 0 to 4
+```
+
+## Print prime numbers from 1 to 100
+
+```
+for num in range(1, 101):
+    for i in range(2, i):
+        if num % i == 0:
+            break
+    else:
+        print(i)
+```
+
+## Continue Loop
+
+```
+for i in range(0, 10):
+    if i == 5:
+        continue  # Skip the iteration when i is 5
+    print(i)  # Print numbers from 0 to 9 except 5
+``` 
+
+## Pass Statement
+
+```
+for i in range(0, 10):
+    if i == 5:
+        pass  # Do nothing when i is 5
+    print(i)  # Print numbers from 0 to 9 including 5
 ```
