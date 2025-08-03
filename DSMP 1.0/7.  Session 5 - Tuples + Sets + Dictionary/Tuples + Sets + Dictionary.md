@@ -28,3 +28,33 @@ In short, a tuple is an immutable list. A tuple can not be changed in any way on
 5. Built-In functionality :- In list built in functionality is more than tuple.
 6. Error prone :- List works on shallow copy to there is more chances top handle error but in case of tuple it works on deep copy.
 7. Usability :- The major difference is mutable/immutable. So acciording to use cases you can use Tuple or List.
+
+
+# Sets
+
+A set is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+
+However, a set itself is mutable. We can add or remove items from it.
+
+Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference etc.
+
+## Characterstics
+
+1. Unordered
+2. Mutable
+3. No Duplicates
+4. Can't contain mutable data types
+
+
+## Frozenset
+Frozen set is just an immutable version of a python set object
+
+It is immutable, also you can do anything like add,remove...
+
+```
+fs = forzenset({1,2,3})
+```
+
+## What works and what does not
+- `work` :- all read functions
+- `does't work` :- write operations
