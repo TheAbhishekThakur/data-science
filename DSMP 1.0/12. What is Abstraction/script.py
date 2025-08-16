@@ -21,3 +21,5 @@ mob = MobileApp()
 mob.database()
 mob.mobile_login()
 mob.security()
+
+# bankObj = BankApp() # Error: You can't create an object of abstract class
