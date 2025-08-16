@@ -243,3 +243,212 @@ print(s.brand) # Samsung
 # Inside smartphone constructor
 # Android
 # Samsung
+
+
+
+## Constructor Example 8: you can't access the parent class attributes, you can only acces the methods.
+
+class Phone:
+    def _init_(self, brand):
+        print("Inside phone constructor")
+        self.brand = brand
+
+    def buy (self):
+        print("Buying a phone")
+
+class SmartPhone(Phone):
+    def buy (self):
+        print("Buying a phone")
+        print(super().brand) # Error: Can't access parent class attribute
+
+s=SmartPhone()
+
+
+## Inheritance Example 1:
+class Parent:
+    def __init__(self, num):
+        self.__num = num
+    
+    def get_num(self):
+        return self.__num
+    
+class Child(Parent):
+    def __init__(self, num, val):
+        super().__init__(num)
+        self.__val = val
+
+    def get_val(self):
+        return self.__val
+
+son = Child(100, 200)
+print(son.get_num()) # 100
+print(son.get_val()) # 200
+
+
+### Types of Inheritance
+
+
+# 1. Single Inheritance
+class Phone:
+    def __init__(self, price, brand, camera):
+        print("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print("Buying a phone")
+
+class SmartPhone(Phone):
+    pass
+
+SmartPhone(1000, "Apple", "13px").buy() # Buying a phone
+
+
+# 2. Multilevel Inheritance
+class Product:
+    def review(self):
+        print("Product customer review")
+class Phone(Product):
+    def __init__(self, price, brand, camera):
+        print("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print("Buying a phone")
+
+class SmartPhone(Phone):
+    pass
+
+s = SmartPhone(1000, "Apple", "13px")
+s.buy() # Buying a phone
+s.review() # Product customer review
+
+
+# 3. Hierarchical Inheritance
+class Phone:
+    def __init__(self, price, brand, camera):
+        print("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print("Buying a phone")
+
+class SmartPhone(Phone):
+    pass
+
+class FeaturePhone(Phone):
+    pass
+
+SmartPhone(1000, "Apple", "13px").buy() # Buying a phone
+FeaturePhone(10, "Lava", "1px").buy() # Buying a phone
+
+
+# 4. Multiple Inheritance (Diamond Problem)
+
+class Phone:
+    def __init__(self, price, brand, camera):
+        print("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print("Buying a phone")
+
+class Product:
+    def review(self):
+        print("Customer review")
+
+class SmartPhone(Phone, Product):
+    pass
+
+s = SmartPhone(1000, "Apple", "13px")
+s.buy() # Buying a phone
+s.review() # Customer review
+
+### 4.1 Diamond Problem
+class Phone:
+    def __init__(self, price, brand, camera):
+        print("Inside phone constructor")
+        self.__price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print("Phone - Buying a phone")
+
+class Product:
+    def buy(self):
+        print("Product - Buying a phone")
+
+# Method resolution order
+class SmartPhone(Phone, Product):
+    pass
+
+s = SmartPhone(1000, "Apple", "13px")
+s.buy() # Product - Buying a phone (Because Product class inherited first)
+
+
+# 5. Hybrid Inheritance
+
+
+
+##############################################################################
+
+
+#### Polymorphism
+
+# 1. Method Overriding
+
+class Parent:
+    
+    def print_hello(self):
+        print("Parent - Hello")
+class Child(Parent):
+     def print_hello(self):
+        print("Child - Hello")
+
+child = Child()
+child.print_hello() # Child - Hello
+
+
+# 2. Method Overloading: Python doesn't support it.
+
+class Shape:
+    def area(self, radius):
+        return 3.14 * radius * radius
+
+    def area(self, l, b):
+        return l * b
+
+shape = Shape()
+shape.area(2) # Error: because we are not passing second parameter and the last area method will call, so it's throwing error.
+shape.area(3, 4) 
+
+# Solution:
+class Shape:
+    def area(self, a, b = 0):
+        if b == 0:
+            return 3.14 * a * a
+        return a * b
+
+    def area(self, l, b):
+        return l * b
+
+shape = Shape()
+shape.area(2) # 12.56
+shape.area(3, 4) # 12
+
+
+# 3. Operator Overloading
+# A powerful feature that allows programmers to redefine the behavior of existing operators like +, -, *, /, etc., when used with user-defined data types or objects.
+# Depends on the inputs it will give you the output
+
+print("hello" + "world") # helloworld
+print(4 + 5) # 9
+print([1,2,3] + [4, 5]) # [1,2,3,4,5]
