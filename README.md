@@ -1,4 +1,4 @@
-# CampusX Data Science Mentorship Program
+# Data Science Mentorship Program
 
 
 ## Week 1: Basics of Python Programming
