@@ -493,3 +493,38 @@ np.vstack((arr4, arr5))
 #        [12, 13, 14, 15],
 #        [16, 17, 18, 19],
 #        [20, 21, 22, 23]])
+
+##################################################################################
+
+# Splitting - Dividing an array into multiple sub-arrays
+
+## Horizontal Splitting
+arr = np.arange(12).reshape(3, 4)
+print("Array arr:\n", arr)
+# Output:
+# [[ 0  1  2  3]
+#  [ 4  5  6  7]
+#  [ 8  9 10 11]]
+
+np.hsplit(arr, 2)
+# Output:
+# [array([[0, 1],
+#         [4, 5],
+#         [8, 9]]), array([[ 2,  3],
+#                           [ 6,  7],
+#                           [10, 11]])]
+
+## Vertical Splitting
+arr = np.arange(12).reshape(4, 3)
+print("Array arr:\n", arr)
+# Output:
+# [[ 0  1  2]
+#  [ 3  4  5]
+#  [ 6  7  8]
+#  [ 9 10 11]]
+
+np.vsplit(arr, 2)
+# Output:
+# [array([[0, 1, 2],
+#         [3, 4, 5]]), array([[ 6,  7,  8],
+#                               [ 9, 10, 11]])]
