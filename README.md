@@ -37,15 +37,7 @@
 - Operations on String
 - Common String functions
 
-### 4.  Session on Time complexity
-
-- Start of the Session
-- PPT presentation on Time Complexity (Efficiency in Programming and Orders of Growth)
-- Examples (01:12:30 – 01:42:00)
-
 ### 5. Week 1 Interview Questions
-
-
 
 
 ## Week 2: Python Data Types
@@ -118,10 +110,6 @@
 - Higher order functions
 - map(), filter(), reduce()
 
-### 4. Paid Session on Career QnA
-### 5. Array Interview Questions
-### 6. Week 2 Interview Questions
-
 ## Week 3: Object Oriented Programming (OOP)
 
 ### 1. Session 7: OOP Part1
@@ -168,10 +156,9 @@
 - Abstract class
 - Coding abstract class (BankApp Class) 
 
-### 5. Session on OOP Project
-### 6. Week 3 Interview Questions
 
 ## Week 4: Advanced Python:
+
 ### 1. Session 10: File Handling + Serialization & Deserialization
 - How File I/O is done
 - Writing to a new text file
@@ -221,12 +208,8 @@
 - Practical Examples
 - Benefits of generator
 
-### 6. Session on Resume Building
-### 7. Session on GUI Development using Python
-- GUI development using tkinter
-### 8. Week 4 Interview Questions
-
 ## Week 5: Numpy
+
 ### 1. Session 13: Numpy Fundamentals
 - Numpy Theory
 - Numpy array
@@ -258,7 +241,9 @@
 - Why to use Flask?
 - Building login system and name entity recognition with API
 
+
 ## Week 6: Pandas
+
 ### 1. Session 16: Pandas Series
 - What is Pandas?
 - Introduction to Pandas Series
@@ -279,6 +264,7 @@
 - Dataframe function – astype()
 
 ### 3. Session 18: Important DataFrame Methods
+
 - Various DataFrame Methods
 - Sort, index, reset_index, isnull, dropna, fillna, drop_duplicates, value_counts, apply, etc.
 
@@ -287,7 +273,7 @@
 - Building API using Flask
 - Hands-on project
 
-### 5. Session on Numpy Interview Question
+
 
 ## Week 7: Advanced Pandas
 ### 1. Session 19: GroupBy Object
@@ -330,6 +316,7 @@
 - Undoing changes
 - Working with a remote repo
 
+
 ## Week 8: Advanced Pandas Continued
 ### 1. Session 21: MultiIndex Series and DataFrames
 - About Multiindex objects
@@ -347,9 +334,6 @@
 - Vectorized String operations
 - Common functions
 - Pandas Datetime
-
-### 3. Session on Pandas Case Study – time Series analysis
-### 4. Session on Pandas Case Study – Working with textual data
 
 
 ## Week 9: Data Visualization
