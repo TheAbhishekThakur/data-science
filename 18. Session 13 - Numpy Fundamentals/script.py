@@ -355,7 +355,7 @@ print("Elements in depth 0 of arr3:\n", arr3[0, :, :])
 
 ##################################################################################
 
-# Iterating
+# Iterating - Looping through array elements
 
 ## Iterating over 1D array
 arr = np.arange(6).reshape(2, 3)
@@ -425,30 +425,71 @@ for element in np.nditer(arr):
 
 ##################################################################################
 
-# Reshaping
+# Reshaping - Changing the shape of an array
 
 ## reshape(): Change the shape of an array without changing its data
-arr = np.arange(12)
-print("Original array arr:", arr) # Output: Original array arr: [ 0 1 2 3 4 5 6 7 8 9 10 11]
+arr = np.arange(1, 11).reshape(2, 5)
+# Output:
+# array([[ 1,  2,  3,  4,  5],
+#        [ 6,  7,  8,  9, 10]])
 
-reshaped_arr = arr.reshape(3, 4)
-print("Reshaped array (3x4):\n", reshaped_arr)
+## transpose(): Transpose the dimensions of an array
+arr = np.arange(12).reshape(3, 4)
+# Output:
+# array([[ 0,  1,  2,  3],
+#        [ 4,  5,  6,  7],
+#        [ 8,  9, 10, 11]])
+np.transpose(arr)
+# Output:
+# array([[ 0,  4,  8],
+#        [ 1,  5,  9],
+#        [ 2,  6, 10],
+#        [ 3,  7, 11]])
+
+## ravel(): Flatten a multi-dimensional array into a 1D array
+arr = np.arange(12).reshape(3, 4)
+# Output:
+# array([[ 0,  1,  2,  3],
+#        [ 4,  5,  6,  7],
+#        [ 8,  9, 10, 11]])
+arr.ravel()
+# Output: array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
+
+
+##################################################################################
+
+# Stacking - Combining multiple arrays into one
+
+## Horizontal Stacking
+arr4 = np.arange(12).reshape(3, 4)
+arr5 = np.arange(12, 24).reshape(3, 4)
+
+print("Array arr4:\n", arr4)
 # Output:
 # [[ 0  1  2  3]
 #  [ 4  5  6  7]
 #  [ 8  9 10 11]]
 
-## transpose(): Transpose the dimensions of an array
+print("Array arr5:\n", arr5)
+# Output:
+# [[12 13 14 15]
+#  [16 17 18 19]
+#  [20 21 22 23]]
 
-## ravel(): Flatten a multi-dimensional array into a 1D array
-
-
-##################################################################################
-
-# Stacking
-
-## Horizontal Stacking
+np.hstack((arr4, arr5))
+# Output:
+# array([[ 0,  1,  2,  3, 12, 13, 14, 15],
+#        [ 4,  5,  6,  7, 16, 17, 18, 19],
+#        [ 8,  9, 10, 11, 20, 21, 22, 23]])
 
 ## Vertical Stacking
-
-##################################################################################
+arr4 = np.arange(12).reshape(3, 4)
+arr5 = np.arange(12, 24).reshape(3, 4)
+np.vstack((arr4, arr5))
+# Output:
+# array([[ 0,  1,  2,  3],
+#        [ 4,  5,  6,  7],
+#        [ 8,  9, 10, 11],
+#        [12, 13, 14, 15],
+#        [16, 17, 18, 19],
+#        [20, 21, 22, 23]])
