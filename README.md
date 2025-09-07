@@ -1,6 +1,5 @@
 # Data Science Mentorship Program
 
-
 ## Week 1: Basics of Python Programming
 
 ### 1. Session 1: Python Basics
@@ -37,7 +36,6 @@
 - Operations on String
 - Common String functions
 
-### 5. Week 1 Interview Questions
 
 
 ## Week 2: Python Data Types
@@ -272,7 +270,6 @@
 - What is API?
 - Building API using Flask
 - Hands-on project
-
 
 
 ## Week 7: Advanced Pandas
