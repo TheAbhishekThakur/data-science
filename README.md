@@ -251,7 +251,7 @@
 - Boolean Indexing on Series
 - Plotting graphs on series
 
-# 2. Session 17: Pandas DataFrame
+### 2. Session 17: Pandas DataFrame
 - Introduction Pandas DataFrame
 - Creating DataFrame and read_csv()
 - DataFrame attributes and methods
@@ -273,6 +273,7 @@
 
 
 ## Week 7: Advanced Pandas
+
 ### 1. Session 19: GroupBy Object
 - What is GroupBy?
 - Applying builtin aggregation fuctions on groupby objects
