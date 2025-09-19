@@ -297,3 +297,160 @@ print(data[[1,3,4,5]])
 ## indexing with labels - fancy indexing
 data = pd.read_csv('./bollywood.csv', squeeze=True)
 print(data['2 states (2014 film)']) # Arjun Kapoor
+
+
+#################################################################################
+
+# Editing Series
+
+marks = [67, 57, 89, 100]
+subjects = ["maths", "english", "science", "hindi"]
+
+marks_series = pd.Series(marks, index=subjects, name="Abhishek's marks")
+## Output:
+# maths 67
+# english 57
+# science 89
+# hindi 100
+# Name: Abhishek's marks, dtype: int64
+
+
+## using indexing
+marks_series[1] = 100
+print(marks_series)
+## Output:
+# maths 67
+# english 100
+# science 89
+# hindi 100
+# Name: Abhishek's marks, dtype: int64
+
+
+## what if an index does not exist
+marks_series['sst'] = 90
+print(marks_series)
+## Output:
+# maths 67
+# english 100
+# science 89
+# hindi 100
+# sst   90
+# Name: Abhishek's marks, dtype: int64
+
+
+## slicing
+marks_series[2:4] = [100, 100]
+print(marks_series)
+
+
+## fancy indexing
+marks_series[[0,3,4]] = [0, 0, 0]
+print(marks_series)
+
+
+## using index label
+data = pd.read_csv('./bollywood.csv', squeeze=True)
+data['2 states (2014 film)'] = "Alia Bhatt"
+print(data)
+
+
+#################################################################################
+
+
+# Copy and Views
+
+
+#################################################################################
+
+# Series with Python Functionalities
+
+## len
+subs = pd.read_csv('./subs.csv')
+print(len(subs)) # 365
+
+## type
+subs = pd.read_csv('./subs.csv')
+print(type(subs)) # <class 'pandas.core.series.Series'>
+
+## dir
+subs = pd.read_csv('./subs.csv')
+print(dir(subs)) # print all methods of series
+
+## sorted
+subs = pd.read_csv('./subs.csv')
+print(sorted(subs)) # sort the series but return in list format
+
+## max
+subs = pd.read_csv('./subs.csv')
+print(max(subs)) # 396
+
+## min
+subs = pd.read_csv('./subs.csv')
+print(min(subs)) # 33
+
+## type conversion
+subs = pd.read_csv('./subs.csv')
+print(list(subs)) # converted into list
+print(dict(subs)) # converted into dictionary
+
+## membership operator
+movies = pd.read_csv('./bollywood.csv', squeeze=True)
+print('2 states (2014 film)' in movies) # True (It will check only index)
+print('Alia Bhatt' in movies.values) # True (It will check in values)
+
+## looping
+movies = pd.read_csv('./bollywood.csv', squeeze=True)
+for i in movies:
+    print(i) # Print all the series's values
+
+for i in movies.index:
+    print(i) # Print all the series's indexes
+
+## Arithmetic Operators
+marks = [67, 57, 89, 100]
+subjects = ["maths", "english", "science", "hindi"]
+marks_series = pd.Series(marks, index=subjects, name="Abhishek's marks")
+print(100 - marks_series) # 
+
+## Relational Operators
+marks = [67, 57, 89, 100]
+subjects = ["maths", "english", "science", "hindi"]
+marks_series = pd.Series(marks, index=subjects, name="Abhishek's marks")
+print(50 >= marks_series) # Print all the values greater than 50
+
+
+#################################################################################
+
+
+
+# Boolean Indexing on Series
+
+## Find no of 50's and 100's scored by kohli
+vk = pd.read_csv('./kohli_ipl.csv', squeeze=True)
+print(vk[vk >= 50])
+print(vk[vk >= 50].size()) # 50
+
+## Find number of ducks
+vk = pd.read_csv('./kohli_ipl.csv', squeeze=True)
+print(vk[vk == 50])
+
+## Count number of day when I had more than 200 subs a day
+subs = pd.read_csv('./subs.csv')
+print(subs[subs > 200])
+
+## Find actors who have done more than 20 movies
+movies = pd.read_csv('./bollywood.csv', squeeze=True)
+num_movies = movies.value_counts()
+print(num_movies[num_movies > 20])
+
+
+#################################################################################
+
+# Plotting Graphs on Series
+subs = pd.read_csv('./subs.csv')
+subs.plot() # It will plot a graph
+
+movies = pd.read_csv('./bollywood.csv', squeeze=True)
+num_movies = movies.value_counts().head(20)
+num_movies.plot(kind='bar') #
+num_movies.plot(kind='pie') #
