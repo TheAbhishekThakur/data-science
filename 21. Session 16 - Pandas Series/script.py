@@ -432,16 +432,16 @@ print(vk[vk >= 50].size()) # 50
 
 ## Find number of ducks
 vk = pd.read_csv('./kohli_ipl.csv', squeeze=True)
-print(vk[vk == 50])
+print(vk[vk == 50]) # Print all the ducks
 
 ## Count number of day when I had more than 200 subs a day
 subs = pd.read_csv('./subs.csv')
-print(subs[subs > 200])
+print(subs[subs > 200]) # Print all days
 
 ## Find actors who have done more than 20 movies
 movies = pd.read_csv('./bollywood.csv', squeeze=True)
 num_movies = movies.value_counts()
-print(num_movies[num_movies > 20])
+print(num_movies[num_movies > 20]) # Print actors who have done more than 20 movies
 
 
 #################################################################################
@@ -452,5 +452,5 @@ subs.plot() # It will plot a graph
 
 movies = pd.read_csv('./bollywood.csv', squeeze=True)
 num_movies = movies.value_counts().head(20)
-num_movies.plot(kind='bar') #
-num_movies.plot(kind='pie') #
+num_movies.plot(kind='bar') # bar graph
+num_movies.plot(kind='pie') # pie chart
